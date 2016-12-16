@@ -14,8 +14,8 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
 
 @Component({
   selector: 'ng2-datepicker',
-  templateUrl: 'ng2-datepicker.component.html',
-  styleUrls: ['ng2-datepicker.css'],
+  templateUrl: './ng2-datepicker.component.html',
+  styleUrls: ['./ng2-datepicker.scss', './ng2-datepicker-bootstrap.scss'],
   providers: [CALENDAR_VALUE_ACCESSOR]
 })
 export class DatePickerComponent implements ControlValueAccessor, OnInit {
@@ -194,7 +194,9 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
         year: date.format('YYYY'),
         formatted: date.format(this.options.format),
         momentObj: date
+
       };
+      this.close();
       this.generateCalendar();
     });
 
